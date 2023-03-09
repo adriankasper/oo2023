@@ -1,15 +1,27 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Account {
-    double balance;
-
-    public Account (double balance){
-        this.balance = balance;
+    Balance balance;
+    List<Transaction> transactions;
+    public Account(double balance) {
+        this.transactions = new ArrayList<>();
+        this.balance = new Balance(balance);
     }
 
-    public void deposit(double amount) {
-        this.balance += amount;
-    }
-    public void withdraw(double amount) {
-        this.balance -= amount;
+    public void transaction(String action, double amount){
+        if (action.equals("d")){
+            balance.deposit(amount);
+            transactions.add(new Transaction(amount));
+        } else if (action.equals("w")) {
+            balance.withdraw(amount);
+            transactions.add(new Transaction(amount));
+        }
+
     }
 
+    public Transaction getLastTransaction(){
+        Transaction lastTransaction = transactions.get(transactions.size() - 1);
+        return lastTransaction;
+    }
 }
