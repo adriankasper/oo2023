@@ -24,4 +24,5 @@ public class Account {
         Transaction lastTransaction = transactions.get(transactions.size() - 1);
         return lastTransaction;
     }
+
 }
