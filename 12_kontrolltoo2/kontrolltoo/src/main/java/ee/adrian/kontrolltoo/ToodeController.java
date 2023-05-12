@@ -41,7 +41,7 @@ public class ToodeController {
         return tooted;
     }
     @GetMapping("leia-allahindlus")
-    public List<Toode> getTootedWithAllahindlusGreaterThanZero() {
+    public List<Toode> leiaAllahindlus() {
         List<Toode> filteredTooted = new ArrayList<>();
         for (Toode toode : tooted) {
             if (toode.getAllahindlus() > 0.0) {
@@ -51,14 +51,16 @@ public class ToodeController {
         return filteredTooted;
     }
     @GetMapping("hind-madalam-kui")
-    public List<Toode> getTootedWithPriceLowerThan(
+    public List<Toode> leiaHindMadalamKui(
             @RequestParam double hind
     ) {
         List<Toode> filteredTooted = new ArrayList<>();
 
         for (Toode toode : tooted) {
             if (toode.getHind() < hind) {
-                filteredTooted.add(toode);
+                if (toode.getAllahindlus() < 1) {
+                    filteredTooted.add(toode);
+                }
             }
         }
 

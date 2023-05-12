@@ -23,14 +23,15 @@ public class Pood {
     private List<Toode> tooted;
 
     /*
-    Lisa pood:
-    localhost:8080/lisa-pood?id=2&nimi=Euronics&tooteIndexid=0,1,2
-
-    Vaata poodi ja selle tooteid:
-    localhost:8080/pood?id=0
 
     Lisa uus toode:
     localhost:8080/lisa-toode?id=10&nimi=Samsung&hind=600&allahindlus=0.1&laoseis=300
+
+    Lisa pood:
+    localhost:8080/lisa-pood?id=2&nimi=Euronics&tooteIndexid=10
+
+    Vaata poodi ja selle tooteid:
+    localhost:8080/pood?id=2
 
     Vaata allahindlusega tooteid:
     localhost:8080/leia-allahindlus
