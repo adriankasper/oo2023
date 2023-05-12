@@ -28,7 +28,7 @@ public class Pood {
     localhost:8080/lisa-toode?id=10&nimi=Samsung&hind=600&allahindlus=0.1&laoseis=300
 
     Lisa pood:
-    localhost:8080/lisa-pood?id=2&nimi=Euronics&tooteIndexid=10
+    localhost:8080/lisa-pood?id=2&nimi=Euronics&tooteIndexid=0,1,2
 
     Vaata poodi ja selle tooteid:
     localhost:8080/pood?id=2
@@ -38,5 +38,11 @@ public class Pood {
 
     Hind madalam kui:
     localhost:8080/hind-madalam-kui?hind=1.0
-     */
+
+    Lisa uus korv:
+    localhost:8080/lisa-korv?id=2&tooteIndexid=0,1,2
+
+    Korvi kogusumma:
+    localhost:8080/korv-kokku?id=2
+*/
 }

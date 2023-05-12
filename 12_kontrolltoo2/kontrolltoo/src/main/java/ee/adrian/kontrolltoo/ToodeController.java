@@ -21,7 +21,7 @@ public class ToodeController {
     ));
 
     @GetMapping("lisa-toode")
-    public List<Toode> lisaToodeURLParameetritega(
+    public List<Toode> lisaToode(
             @RequestParam int id,
             @RequestParam String nimi,
             @RequestParam double hind,
@@ -32,14 +32,6 @@ public class ToodeController {
         return tooted;
     } // localhost:8080/lisa-toode?id=10&nimi=Samsung&hind=600&allahindlus=0.1&laoseis=300
 
-    // localhost:8080/leia-rasva-alusel2?alg=10&l6pp=100
-    @GetMapping("leia-allahindluse-alusel")
-    public List<Toode> leiaRasvaAlusel(
-            @RequestParam int alg,
-            @RequestParam int l6pp
-    ) {
-        return tooted;
-    }
     @GetMapping("leia-allahindlus")
     public List<Toode> leiaAllahindlus() {
         List<Toode> filteredTooted = new ArrayList<>();
